@@ -1,0 +1,253 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100%;
+  width: 100vw;
+  margin: 0;
+  padding: 20px;
+  font-family: monospace;
+  background: url(./img/pexels-cmonphotography-1809644.webp) no-repeat center
+    center;
+  background-color: #fdfdfd; /* fallback nếu ảnh không load */
+  background-size: cover;
+  background-attachment: fixed;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-ui {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  min-height: 30%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(15px);
+  /* safiri */
+
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  animation: shake 3s infinite ease-in-out alternate;
+}
+@keyframes shake {
+  20% {
+    transform: translateX(-1px);
+  }
+  40% {
+    transform: translateX(1px);
+  }
+  60% {
+    transform: translateX(-1px);
+  }
+  80% {
+    transform: translateX(1px);
+  }
+}
+.login-ui h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  word-spacing: -10px;
+  padding-top: 20px;
+  width: fit-content;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
+  user-select: none;
+}
+.login-ui h1:hover {
+  text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5,
+    -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5,
+    -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5,
+    -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5;
+  padding-left: 5px;
+  scale: 1.2;
+}
+.login-ui h1:active {
+  rotate: 360deg;
+  transition: all 5s ease;
+  color: pink;
+  scale: 0.8;
+}
+.login-ui a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 900;
+  text-align: end;
+  text-wrap: nowrap;
+}
+
+.login-ui form {
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+.input-act {
+  width: 100%;
+  position: relative;
+}
+.input-act input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 99px;
+  background: transparent;
+  font-size: 16px;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+.input-act input:hover {
+  border: 2px solid rgb(228, 228, 228);
+  transition: all 0.7s ease;
+}
+.input-act i {
+  position: absolute;
+  right: 5%;
+  bottom: 36%;
+}
+.input-act i:hover {
+  scale: 1.1;
+}
+.input-act input::placeholder {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+.options :first-child {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-wrap: nowrap;
+  cursor: pointer;
+}
+
+.login-ui button {
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+
+  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.login-ui button:hover,
+.login-ui a:hover,
+.login-ui button:active,
+.login-ui a:active {
+  scale: 1.02;
+  text-decoration: underline;
+  color: #2696db;
+}
+
+.register-text {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 13px;
+}
+.register-text a {
+  cursor: help;
+}
+@media (max-width: 355px) {
+  body {
+    padding: 30px;
+  }
+  .login-ui {
+    max-width: 100%;
+    height: clamp(400px, 60%, 600px);
+    padding: 20px;
+  }
+
+  .login-ui h1 {
+    font-size: 22px;
+  }
+
+  .input-act input {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .input-act i {
+    right: 8px;
+    bottom: 35%;
+  }
+
+  .options {
+    align-items: center;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .login-ui button {
+    height: 35px;
+    font-size: 13px;
+  }
+
+  .register-text {
+    font-size: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-wrap: no-wrap;
+  }
+  .options a,
+  .register-text a {
+    font-size: 10px;
+  }
+}
+@media (max-width: 320px) {
+  .login-ui {
+    width: 90%;
+  }
+  .login-ui h1 {
+    font-size: 15px;
+  }
+
+  .options,
+  .register-text {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-ui button {
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 8px;
+  }
+}
+/* mo khoa  */
+.fa-unlock {
+  content: "🔓";
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0"
+    />
+    <title>Komodo</title>
+    <script defer src="assets/js/script.js"></script>
+    <script defer src="assets/js/register.js"></script>
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Product — Short descriptive title | BrandName"
+    />
+    <meta
+      property="og:description"
+      content="Same short description used for SEO; tailored for social if needed."
+    />
+    <meta
+      property="og:url"
+      content="https://www.example.com/current-page-path"
+    />
+    <meta
+      property="og:image"
+      content="https://www.example.com/images/og-image.jpg"
+    />
+    <meta property="og:site_name" content="BrandName" />
+    <!-- 8. Performance: Preconnect / Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload your critical CSS then load it (improves FCP) -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <!-- Preload hero image (if above-the-fold) -->
+    <link rel="preload" href="/images/hero.jpg" as="image" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="login-ui">
+      <h1>Komodo</h1>
+      <form id="form-login">
+        <div class="input-act">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+            required
+          />
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="input-act">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <div class="options">
+          <label>
+            <input type="checkbox" name="remember" />
+            Remember me
+          </label>
+          <a href="#">Forgot Password?</a>
+        </div>
+
+        <button type="submit" id="btn">Login</button>
+        <p class="register-text">
+          Don’t have an account?
+          <a href="register.html"> Register</a>
+        </p>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+    <script defer src="assets/js/register.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #8a73b8, #b18af0, #382568);
+        background-size: 300% 300%;
+        animation: gradientBG 30s linear infinite;
+      }
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 0%;
+        }
+        50% {
+          background-position: 100% 100%;
+        }
+        100% {
+          background-position: 0% 0%;
+        }
+      }
+      .register-container {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 35px 30px;
+        border-radius: 20px;
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        max-width: 400px;
+        width: 100%;
+        min-height: 400px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+          rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+          rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        animation: shake 3s infinite ease-in-out alternate;
+      }
+
+      @keyframes shake {
+        20% {
+          transform: translateX(-1px);
+        }
+        40% {
+          transform: translateX(1px);
+        }
+        60% {
+          transform: translateX(-1px);
+        }
+        80% {
+          transform: translateX(1px);
+        }
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        font-size: 26px;
+        font-weight: bold;
+        color: #fff;
+        letter-spacing: 1px;
+        text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
+          0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+          0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+          0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+          0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+      }
+
+      h1:hover {
+        transform: scale(1.05);
+      }
+      input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+        outline: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: whitesmoke;
+        transition: 0.3s;
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+          rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+          rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      }
+
+      input::placeholder {
+        color: rgb(78, 58, 58);
+      }
+
+      input:focus {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.01);
+        border: 1px solid #b197fc;
+      }
+      input:hover {
+        scale: 1.02;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      input:hover::placeholder,
+      input:focus::placeholder {
+        transition: color 0.3s ease;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(135deg, #b197fc, #e0aaff);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+          rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+          rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        font-size: 15px;
+      }
+
+      button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(149, 117, 205, 0.5);
+      }
+      #togglePassword {
+        transform: none;
+        position: absolute;
+        right: 30px;
+        bottom: 39.5%;
+        width: fit-content;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 14px;
+        box-shadow: none;
+        transition: transform 0.3s;
+      }
+      #togglePassword:hover {
+        transform: scale(1.05);
+      }
+
+      p {
+        margin-top: 18px;
+        font-size: 13px;
+        color: rgb(78, 58, 58);
+      }
+
+      a {
+        display: inline-block;
+        padding: 3px 6px;
+        border-radius: 6px;
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      a:hover {
+        background: linear-gradient(135deg, #b197fc, #e0aaff);
+        box-shadow: 0 4px 12px rgba(176, 118, 255, 0.5);
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="register-container">
+      <h1>Create Account</h1>
+      <form id="registerForm">
+        <input
+          type="email"
+          name="email"
+          placeholder="Please enter your email"
+          required
+        />
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter username"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter password"
+          required
+        />
+        <button type="button" id="togglePassword">🙈</button>
+        <button type="submit">Register</button>
+      </form>
+      <p>Or <a href="index.html">Log in</a> if you already have an account</p>
+    </div>
+  </body>
+</html>
