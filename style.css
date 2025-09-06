@@ -91,7 +91,8 @@ body::before {
   font-family: "Poppins", sans-serif;
   font-size: 36px;
   word-spacing: -10px;
-  padding-top: 20px;
+  padding-top: 10px;
+  margin-bottom: 5px;
   width: fit-content;
   color: #ffffff;
   transition: all 0.3s ease;
@@ -146,7 +147,7 @@ body::before {
 }
 .input-act input:hover {
   border: 2px solid rgb(228, 228, 228);
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   scale: 1.02;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -201,7 +202,7 @@ body::before {
   height: 40px;
   border: none;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 }
 .login-ui button:hover,
 .login-ui a:hover,
@@ -240,6 +241,12 @@ body::before {
   .login-ui {
     max-width: 100%;
     height: clamp(400px, 60%, 600px);
+    /* clamp(MIN, VAL, MAX) */
+    /* Nếu 60% < 400px → dùng 400px
+Nếu 60% > 600px → dùng 600px
+Nếu 400px ≤ 60% ≤ 600px → dùng 60% */
+    /* “Mình muốn cái khung này cao 60% thôi, nhưng không nhỏ quá 400px và cũng không to quá 600px.” */
+    /* Nói nôm na là clamp() = min(max(VAL, MIN), MAX)` 😏 */
     padding: 20px;
   }
 
