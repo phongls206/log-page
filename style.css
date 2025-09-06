@@ -13,7 +13,7 @@ body {
   width: 100vw;
   margin: 0;
   padding: 20px;
-  font-family: monospace;
+
   background: url(./img/pexels-cmonphotography-1809644.webp) no-repeat center
     center;
   background-color: #fdfdfd; /* fallback nếu ảnh không load */
@@ -23,8 +23,34 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./img/pexels-cmonphotography-1809644.webp) no-repeat center
+    center;
+  background-size: cover;
+  z-index: -1;
+  animation: bg-zoom 15s ease-in-out infinite alternate;
+}
+
+@keyframes bg-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .login-ui {
   border: 2px solid rgba(255, 255, 255, 0.2);
   width: 100%;
@@ -114,10 +140,16 @@ body {
   color: #ffffff;
   border: 2px solid rgba(255, 255, 255, 0.2);
   outline: none;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 .input-act input:hover {
   border: 2px solid rgb(228, 228, 228);
-  transition: all 0.7s ease;
+  transition: all 0.4s ease;
+  scale: 1.02;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .input-act i {
   position: absolute;
@@ -139,6 +171,14 @@ body {
   align-items: center;
   gap: 10px;
   font-size: 13px;
+  text-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.options input {
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 .options :first-child {
   display: flex;
@@ -146,6 +186,7 @@ body {
   gap: 5px;
   text-wrap: nowrap;
   cursor: pointer;
+  font-weight: 900;
 }
 
 .login-ui button {
@@ -153,13 +194,14 @@ body {
   font-size: 14px;
   font-weight: 700;
   text-align: center;
-
   letter-spacing: 1px;
-  font-family: "Poppins", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
   height: 40px;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
 }
 .login-ui button:hover,
 .login-ui a:hover,
@@ -167,7 +209,18 @@ body {
 .login-ui a:active {
   scale: 1.02;
   text-decoration: underline;
-  color: #2696db;
+  color: #30688bff;
+}
+
+.login-ui button {
+  background: linear-gradient(90deg, #ffffff, #e0e0ff);
+  color: #111;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.login-ui button:hover {
+  background: linear-gradient(90deg, #ffffff, #d0d0ff);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .register-text {
@@ -175,10 +228,11 @@ body {
   justify-content: center;
   gap: 5px;
   font-size: 13px;
+  text-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-.register-text a {
-  cursor: help;
-}
+
 @media (max-width: 355px) {
   body {
     padding: 30px;
@@ -203,12 +257,6 @@ body {
     bottom: 35%;
   }
 
-  .options {
-    align-items: center;
-    text-align: center;
-    font-size: 11px;
-  }
-
   .login-ui button {
     height: 35px;
     font-size: 13px;
@@ -221,11 +269,22 @@ body {
     align-items: center;
     text-wrap: no-wrap;
   }
+  .options {
+    align-items: center;
+    text-align: center;
+    font-size: 11px;
+  }
+
   .options a,
   .register-text a {
     font-size: 10px;
+    transition: all 0.3s;
   }
 }
+.register-text a:hover {
+  transform: scale(1.02);
+}
+
 @media (max-width: 320px) {
   .login-ui {
     width: 90%;
@@ -248,6 +307,7 @@ body {
   }
 }
 /* mo khoa  */
-.fa-unlock {
+.fa-unlock::before {
   content: "🔓";
+  display: inline-block;
 }

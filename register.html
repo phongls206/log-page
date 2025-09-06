@@ -11,7 +11,6 @@
         margin: 0;
         padding: 0;
       }
-
       body {
         height: 100vh;
         font-family: "Poppins", sans-serif;
@@ -20,7 +19,7 @@
         align-items: center;
         background: linear-gradient(135deg, #8a73b8, #b18af0, #382568);
         background-size: 300% 300%;
-        animation: gradientBG 30s linear infinite;
+        animation: gradientBG 20s linear infinite;
       }
       @keyframes gradientBG {
         0% {
@@ -133,7 +132,9 @@
 
       button:hover {
         transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(149, 117, 205, 0.5);
+
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+          rgba(0, 0, 0, 0.22) 0px 15px 12px;
       }
       #togglePassword {
         transform: none;
@@ -171,8 +172,10 @@
 
       a:hover {
         background: linear-gradient(135deg, #b197fc, #e0aaff);
-        box-shadow: 0 4px 12px rgba(176, 118, 255, 0.5);
+
         transform: translateY(-2px);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+          rgba(0, 0, 0, 0.22) 0px 15px 12px;
       }
     </style>
   </head>
