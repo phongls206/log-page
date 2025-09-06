@@ -210,7 +210,6 @@ body::before {
 .login-ui a:active {
   scale: 1.02;
   text-decoration: underline;
-  color: #30688bff;
 }
 
 .login-ui button {
@@ -222,6 +221,7 @@ body::before {
   background: linear-gradient(90deg, #ffffff, #d0d0ff);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  color: #3d3d53;
 }
 
 .register-text {
