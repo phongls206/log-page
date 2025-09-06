@@ -26,8 +26,13 @@ register.addEventListener("submit", (e) => {
       "Username must be 3–15 characters long and contain only letters, numbers, or underscores."
     );
 
-  if (newPassword.length < 6 || newPassword.length > 15) {
-    return alert("Password must be between 6 and 15 characters.");
+  const PASS_RE =
+    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,15}$/;
+  if (!PASS_RE.test(newPassword)) {
+    alert(
+      "Password must be 6-15 characters, include letters, numbers, and special characters!"
+    );
+    return;
   }
 
   if (oldEmail) {

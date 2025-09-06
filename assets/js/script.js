@@ -41,16 +41,18 @@ const authentication = () => {
     return;
   }
 
-  const PASS_RE_SIMPLE = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,15}$/;
+  const PASS_RE =
+    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,15}$/;
 
   // Giải thích:
   // (?=.*[A-Za-z]) → ít nhất 1 chữ cái
   // (?=.*\d) → ít nhất 1 số
   // (?=.*[@$!%*#?&]) → ít nhất 1 ký tự đặc biệt
   // {6,15} → tổng độ dài 6–15 ký tự
-  if (!PASS_RE_SIMPLE.test(pass.value)) {
+
+  if (!PASS_RE.test(pass.value)) {
     alert(
-      "Password must be 6-15 characters long and include letters, numbers, and special characters!"
+      "Password must be 6-15 characters, include letters, numbers, and special characters!"
     );
     return;
   }
