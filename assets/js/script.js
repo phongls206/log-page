@@ -13,7 +13,8 @@ const authentication = () => {
       (user.value.trim() === acc.name && pass.value.trim() === acc.password) ||
       (user.value.trim() === acc.email && pass.value.trim() === acc.password)
   );
-  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+  const EMAIL_RE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,63}$/;
+
   // dinh dang mail
   if (user.type === "email" && !EMAIL_RE.test(user.value.trim())) {
     alert("Email format is wrong");
