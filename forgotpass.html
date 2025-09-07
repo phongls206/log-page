@@ -3,25 +3,220 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Forgot Password</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(270deg, pink, #ffb6c1, #ffc0cb, hotpink);
+        background-size: 600% 600%;
+        font-family: "Segoe UI", Arial, sans-serif;
+        animation: bgMove 15s ease infinite;
+      }
+
+      @keyframes bgMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .forgot-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        max-width: 400px;
+        padding: 25px 20px;
+        border-radius: 25px;
+        background: linear-gradient(180deg, #fff0f5, #ffe4e1);
+        box-shadow: 0 12px 30px rgba(255, 105, 180, 0.4);
+        gap: 20px;
+        animation: fade-in 1.2s ease;
+        text-align: center;
+      }
+
+      .forgot-info h1 {
+        font-size: 26px;
+        color: hotpink;
+        margin-bottom: 30px;
+        animation: wobble 1.5s ease-in-out infinite alternate;
+        display: inline-block;
+      }
+
+      .forgot-back-act {
+        align-self: flex-start;
+        padding: 6px 15px;
+        border-radius: 50px;
+        border: none;
+        background: linear-gradient(135deg, pink, hotpink, deeppink);
+        cursor: pointer;
+        transition: 0.3s;
+        margin-bottom: 10px;
+      }
+
+      .forgot-back-act:hover {
+        transform: scale(1.05);
+      }
+
+      .forgot-back-act a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      @keyframes wobble {
+        0% {
+          transform: rotate(0deg) translateX(5%);
+        }
+        25% {
+          transform: rotate(5deg);
+        }
+        50% {
+          transform: rotate(0deg) translateY(-5%);
+        }
+        75% {
+          transform: rotate(-5deg);
+        }
+        100% {
+          transform: rotate(0deg) translateX(-5%);
+        }
+      }
+
+      #forgot-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      #forgot-form input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ffb6c1;
+        border-radius: 12px;
+        font-size: 16px;
+        outline: none;
+        transition: 0.3s;
+        box-sizing: border-box;
+      }
+
+      #forgot-form input:focus {
+        border-color: hotpink;
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+      }
+
+      #forgot-form button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, pink, hotpink, deeppink);
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      #forgot-form button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, deeppink, hotpink);
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .forgot-info {
+          padding: 20px 15px;
+        }
+        .forgot-info h1 {
+          font-size: 22px;
+        }
+        #forgot-form input,
+        #forgot-form button {
+          font-size: 16px;
+          padding: 10px;
+        }
+        .forgot-back-act a {
+          font-size: 12px;
+        }
+      }
+      @media (max-width: 400px) {
+        .forgot-info {
+          padding: 30px 15px;
+          margin: 10px;
+        }
+        .forgot-info h1 {
+          font-size: 18px;
+        }
+        #forgot-form input,
+        #forgot-form button {
+          font-size: 16px;
+          padding: 10px;
+        }
+        .forgot-back-act a {
+          font-size: 12px;
+        }
+      }
+      @media (max-width: 320px) {
+        .forgot-info {
+          padding: 30px 15px;
+          margin: 10px;
+          min-height: 40%;
+        }
+        .forgot-info h1 {
+          font-size: 18px;
+        }
+        #forgot-form input,
+        #forgot-form button {
+          font-size: 16px;
+          padding: 10px;
+        }
+        .forgot-back-act a {
+          font-size: 12px;
+        }
+      }
+    </style>
   </head>
-  
-<style>
-  .fotgotpass-ui{
-
-  }
-</style>
-
   <body>
-    <div class="forgotpass-ui">
-      <div class="fotgot-info">
-        <h1>Forgot Password</h1>
-        <form id="forgot-form">
-          <input type="email" placeholder="Nhập chính xác email" />
-          <input type="text" placeholder="Nhập chính xác mật khẩu cũ" />
-          <input type="text" placeholder="Nhập mật khẩu mới" />
-        </form>
-      </div>
+    <div class="forgot-info">
+      <button class="forgot-back-act">
+        <a href="index.html">&lt;&lt; Go Back</a>
+      </button>
+      <h1>💖 Forgot Password 💖</h1>
+      <form id="forgot-form">
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter your username"
+          required
+        />
+        <input type="email" placeholder="Enter your email" required />
+        <input type="date" required />
+        <button type="submit">Reset Password</button>
+      </form>
     </div>
+
+    <script src="./assets/js/forgot.js"></script>
   </body>
 </html>

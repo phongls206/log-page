@@ -59,6 +59,16 @@ const authentication = () => {
 
   if (matchAcc) {
     alert("Login Successfully");
+    if (rememberBtn.checked) {
+      // Lưu tài khoản hiện tại đang login
+      localStorage.setItem(
+        "remember",
+        JSON.stringify({ username: user.value, password: pass.value })
+      );
+    } else {
+      // Nếu không check → xóa dữ liệu cũ
+      localStorage.removeItem("remember");
+    }
     setTimeout(() => {
       window.location.href = "https://phongls206.github.io/Caculate/";
     }, 1000);
@@ -101,3 +111,25 @@ changeLogin.addEventListener("click", () => {
   changeLogin.classList.toggle("fa-user");
   changeLogin.classList.toggle("fa-envelope");
 });
+
+// xu ly phan remember
+const rememberBtn = document.getElementById("remember");
+// Để khi load trang form tự điền username/password nếu đã lưu:
+window.onload = () => {
+  const saved = JSON.parse(localStorage.getItem("remember") || "{}");
+  // neu ma no khop voi cai account dc luu khi tick vao checked thi gan value = cai do len man luon
+  if (saved.username && saved.password) {
+    const savedMatch = savedUser.find(
+      (acc) =>
+        (saved.username === acc.name && saved.password === acc.password) ||
+        (saved.username === acc.email && saved.password === acc.password)
+    );
+    if (savedMatch) {
+      user.value = saved.username;
+      pass.value = saved.password;
+      rememberBtn.checked = true;
+    } else {
+      localStorage.removeItem("remember");
+    }
+  }
+};
