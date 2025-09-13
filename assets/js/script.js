@@ -59,6 +59,8 @@ const authentication = () => {
 
   if (matchAcc) {
     alert("Login Successfully");
+    localStorage.setItem("currentUser", JSON.stringify(matchAcc));
+
     if (rememberBtn.checked) {
       // Lưu tài khoản hiện tại đang login
       localStorage.setItem(
