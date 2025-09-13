@@ -70,7 +70,7 @@ const authentication = () => {
       localStorage.removeItem("remember");
     }
     setTimeout(() => {
-      window.location.href = "https://phongls206.github.io/Caculate/";
+      window.location.href = "https://phongls206.github.io/Todolist-training/";
     }, 1000);
   } else {
     alert("Username Or Password Is Not Correct");
